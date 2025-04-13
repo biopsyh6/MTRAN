@@ -250,13 +250,23 @@ def get_token_types_list() -> List[TokenType]:
     ]
 
     operators = [
-        TokenType("comparison", r'(==|!=|<|>|<=|>=)', "operator"),
-        TokenType("assignment", r'=|\+=|-=|\*=|/=|%=|<<=|>>=|&=|\^=|\\|=', "operator"),
+        # Составные операторы присваивания
+        TokenType("compound_assignment", r'>>=|<<=|\+=|-=|\*=|/=|%=|&=|\^=|\|=|&&=|\|\|=', "operator"),
+        # Сравнение
+        TokenType("comparison", r'==|!=|<=|>=|<|>', "operator"),
+        # Простое присваивание
+        TokenType("assignment", r'=', "operator"),
+        # Короткое объявление
         TokenType("short_declaration", r':=', "operator"),
-        TokenType("increment_decrement", r'(\+\+|--)', "operator"),
-        TokenType("arithmetic", r'(\+|-|\*|\/|%)', "operator"),
-        TokenType("logical", r'(&&|\|\|)', "operator"),
-        TokenType("bitwise", r'(&|\||\^|<<|>>)', "operator"),
+        # Инкремент и декремент
+        TokenType("increment_decrement", r'\+\+|--', "operator"),
+        # Арифметика
+        TokenType("arithmetic", r'\+|-|\*|\/|%', "operator"),
+        # Логические операторы
+        TokenType("logical", r'&&|\|\|', "operator"),
+        # Побитовые операторы
+        TokenType("bitwise", r'&|\||\^|<<|>>', "operator"),
+        # Унарный оператор
         TokenType("unary", r'!', "operator"),
     ]
 

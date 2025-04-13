@@ -510,7 +510,8 @@ class Parser:
         operator = self.current_token()
         
         # Поддержка всех операторов присваивания Go
-        if operator and operator.kind in {"assignment", "short_declaration"} and operator.text in {"=", ":=", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<=", ">>="}:
+        if operator and (operator.kind in {"assignment", "short_declaration", "compound_assignment"} and 
+                        operator.text in {"=", ":=", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<=", ">>=", "&&=", "||="}):
             operator_pos = self.get_next_token_pos()
             self.consume_token()
             right = self.parse_comparison_expression()

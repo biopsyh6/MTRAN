@@ -5,7 +5,7 @@ import json
 
 
 def main():
-    with open("go/store.go", "r") as file:
+    with open("go/product.go", "r") as file:
         code = file.read()
 
     # Лексический анализ

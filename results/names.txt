@@ -1,43 +1,21 @@
 Lexeme                    Token type      Row   Column Id   
 =========================================================
-store                     ident           1     9     N:0  
-"test_code/product"       string          2     9     N:1  
-"fmt"                     string          3     4     N:2  
-Store                     ident           5     6     N:3  
-products                  ident           6     2     N:4  
-string                    ident           6     15    N:5  
-product                   ident           6     22    N:6  
-Product                   ident           6     30    N:7  
-NewStore                  ident           9     6     N:8  
-make                      ident           10    25    N:9  
-s                         ident           13    7     N:10 
-AddProduct                ident           13    16    N:11 
-name                      ident           13    27    N:12 
-price                     ident           13    40    N:13 
-float64                   ident           13    46    N:14 
-quantity                  ident           13    55    N:15 
-int                       ident           13    64    N:16 
-Name                      ident           14    37    N:17 
-Price                     ident           14    49    N:18 
-Quantity                  ident           14    63    N:19 
-ListProducts              ident           18    16    N:20 
-_                         ident           19    6     N:21 
-Info                      ident           20    11    N:22 
-BuyProduct                ident           24    16    N:23 
-bool                      ident           24    62    N:24 
-exists                    ident           25    11    N:25 
-fmt                       ident           28    3     N:26 
-Println                   ident           28    7     N:27 
-"Товар не найден!" string          28    15    N:28 
-false                     ident           29    13    N:29 
-purchasedQuantities       ident           32    2     N:30 
-0                         integer         32    37    N:31 
-"Недостаточно товара в наличии!" string          35    16    N:32 
-"Вы купили весь товар!" string          39    16    N:33 
-Printf                    ident           43    8     N:34 
-"Вы купили %d шт. товара '%s'. Осталось: %d\n" string          43    15    N:35 
-append                    ident           45    24    N:36 
-1                         integer         47    16    N:37 
-"Количество после сдвига: %d\n" string          49    14    N:38 
-"Купленные количества: %v\n" string          57    13    N:39 
-true                      ident           59    12    N:40 
+product                   ident           1     9     N:0  
+"fmt"                     string          3     8     N:1  
+Product                   ident           5     6     N:2  
+Name                      ident           6     2     N:3  
+string                    ident           6     11    N:4  
+Price                     ident           7     2     N:5  
+float64                   ident           7     11    N:6  
+Quantity                  ident           8     2     N:7  
+int                       ident           8     11    N:8  
+p                         ident           11    7     N:9  
+Info                      ident           11    18    N:10 
+fmt                       ident           12    5     N:11 
+Printf                    ident           12    9     N:12 
+"Товар: %s | Цена: %.2f | Количество: %d\n" string          12    16    N:13 
+Print                     ident           13    9     N:14 
+`func (p Product) Info() {
+    fmt.Printf("Товар: %s | Цена: %.2f | Количество: %d\n", p.Name, p.Price, p.Quantity)
+    fmt.Print("dasdas")
+}` raw_string      13    15    N:15 
