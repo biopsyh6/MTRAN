@@ -1,0 +1,12 @@
+Lexeme                    Token type      Row   Column Id   
+=========================================================
+;                         semicolon       1     14    P:0  
+(                         lpar            2     8     P:1  
+)                         rpar            3     10    P:2  
+{                         lbrace          5     19    P:3  
+[                         lbracket        6     14    P:4  
+]                         rbracket        6     21    P:5  
+.                         dot             6     29    P:6  
+}                         rbrace          7     1     P:7  
+:                         colon           10    23    P:8  
+,                         comma           13    38    P:9  

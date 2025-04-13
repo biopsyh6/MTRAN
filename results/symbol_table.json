@@ -1,0 +1,713 @@
+{
+  "scopes": {
+    "-Global-": {
+      "constants": {},
+      "variables": {}
+    },
+    "main": {
+      "variables": {
+        "myStore": {
+          "type": "auto",
+          "pos": 112,
+          "value": {
+            "type": "FunctionCall",
+            "package": "myStore",
+            "name": "BuyProduct",
+            "args": [
+              {
+                "type": "StringLiteral",
+                "value": "\"РњС‹С€СЊ\"",
+                "Pos": 108
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "5",
+                "Pos": 110
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lpar",
+                "Text": "(",
+                "Pos": 107
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 109
+              },
+              {
+                "Name": "rpar",
+                "Text": ")",
+                "Pos": 111
+              }
+            ]
+          }
+        },
+        "test": {
+          "type": "auto",
+          "pos": 71,
+          "value": {
+            "type": "StringLiteral",
+            "value": "\"fjdksjkfs\"",
+            "Pos": 70
+          }
+        },
+        "success": {
+          "type": "auto",
+          "pos": 112,
+          "value": {
+            "type": "FunctionCall",
+            "package": "myStore",
+            "name": "BuyProduct",
+            "args": [
+              {
+                "type": "StringLiteral",
+                "value": "\"РњС‹С€СЊ\"",
+                "Pos": 108
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "5",
+                "Pos": 110
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lpar",
+                "Text": "(",
+                "Pos": 107
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 109
+              },
+              {
+                "Name": "rpar",
+                "Text": ")",
+                "Pos": 111
+              }
+            ]
+          }
+        },
+        "i": {
+          "type": "auto",
+          "pos": 126,
+          "value": {
+            "type": "NumberLiteral",
+            "value": "1",
+            "Pos": 125
+          }
+        },
+        "numbers": {
+          "type": "[10]int",
+          "pos": 170,
+          "value": {
+            "type": "ArrayLiteral",
+            "array_type": "int",
+            "size": "10",
+            "elements": [
+              {
+                "type": "NumberLiteral",
+                "value": "1",
+                "Pos": 150
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "-2",
+                "Pos": 152
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "3",
+                "Pos": 154
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "-4",
+                "Pos": 156
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "5",
+                "Pos": 158
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "-6",
+                "Pos": 160
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "7",
+                "Pos": 162
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "8",
+                "Pos": 164
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "-9",
+                "Pos": 166
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "10",
+                "Pos": 168
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lbracket",
+                "Text": "[",
+                "Pos": 145
+              },
+              {
+                "Name": "integer",
+                "Text": "10",
+                "Pos": 146
+              },
+              {
+                "Name": "rbracket",
+                "Text": "]",
+                "Pos": 147
+              },
+              {
+                "Name": "ArrayType",
+                "Text": "int",
+                "Pos": 148
+              },
+              {
+                "Name": "lbrace",
+                "Text": "{",
+                "Pos": 149
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 151
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 153
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 155
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 157
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 159
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 161
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 163
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 165
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 167
+              },
+              {
+                "Name": "rbrace",
+                "Text": "}",
+                "Pos": 169
+              }
+            ]
+          }
+        },
+        "sum": {
+          "type": "auto",
+          "pos": 175,
+          "value": {
+            "type": "NumberLiteral",
+            "value": "0",
+            "Pos": 174
+          }
+        },
+        "_": {
+          "type": "auto",
+          "pos": 243
+        },
+        "value": {
+          "type": "auto",
+          "pos": 243
+        },
+        "numbers1": {
+          "type": "[10]int",
+          "pos": 230,
+          "value": {
+            "type": "ArrayLiteral",
+            "array_type": "int",
+            "size": "10",
+            "elements": [
+              {
+                "type": "NumberLiteral",
+                "value": "1",
+                "Pos": 210
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "2",
+                "Pos": 212
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "3",
+                "Pos": 214
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "4",
+                "Pos": 216
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "5",
+                "Pos": 218
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "6",
+                "Pos": 220
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "7",
+                "Pos": 222
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "8",
+                "Pos": 224
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "9",
+                "Pos": 226
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "10",
+                "Pos": 228
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lbracket",
+                "Text": "[",
+                "Pos": 205
+              },
+              {
+                "Name": "integer",
+                "Text": "10",
+                "Pos": 206
+              },
+              {
+                "Name": "rbracket",
+                "Text": "]",
+                "Pos": 207
+              },
+              {
+                "Name": "ArrayType",
+                "Text": "int",
+                "Pos": 208
+              },
+              {
+                "Name": "lbrace",
+                "Text": "{",
+                "Pos": 209
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 211
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 213
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 215
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 217
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 219
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 221
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 223
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 225
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 227
+              },
+              {
+                "Name": "rbrace",
+                "Text": "}",
+                "Pos": 229
+              }
+            ]
+          }
+        },
+        "sum2": {
+          "type": "auto",
+          "pos": 235,
+          "value": {
+            "type": "NumberLiteral",
+            "value": "0",
+            "Pos": 234
+          }
+        },
+        "initialUsers": {
+          "type": "auto",
+          "pos": 295,
+          "value": {
+            "type": "ArrayLiteral",
+            "array_type": "string",
+            "size": "8",
+            "elements": [
+              {
+                "type": "StringLiteral",
+                "value": "\"Bob\"",
+                "Pos": 279
+              },
+              {
+                "type": "StringLiteral",
+                "value": "\"Alice\"",
+                "Pos": 281
+              },
+              {
+                "type": "StringLiteral",
+                "value": "\"Kate\"",
+                "Pos": 283
+              },
+              {
+                "type": "StringLiteral",
+                "value": "\"Sam\"",
+                "Pos": 285
+              },
+              {
+                "type": "StringLiteral",
+                "value": "\"Tom\"",
+                "Pos": 287
+              },
+              {
+                "type": "StringLiteral",
+                "value": "\"Paul\"",
+                "Pos": 289
+              },
+              {
+                "type": "StringLiteral",
+                "value": "\"Mike\"",
+                "Pos": 291
+              },
+              {
+                "type": "StringLiteral",
+                "value": "\"Robert\"",
+                "Pos": 293
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lbracket",
+                "Text": "[",
+                "Pos": 274
+              },
+              {
+                "Name": "integer",
+                "Text": "8",
+                "Pos": 275
+              },
+              {
+                "Name": "rbracket",
+                "Text": "]",
+                "Pos": 276
+              },
+              {
+                "Name": "ArrayType",
+                "Text": "string",
+                "Pos": 277
+              },
+              {
+                "Name": "lbrace",
+                "Text": "{",
+                "Pos": 278
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 280
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 282
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 284
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 286
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 288
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 290
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 292
+              },
+              {
+                "Name": "rbrace",
+                "Text": "}",
+                "Pos": 294
+              }
+            ]
+          }
+        },
+        "users1": {
+          "type": "auto",
+          "pos": 304,
+          "value": {
+            "type": "SliceExpression",
+            "array": {
+              "type": "Identifier",
+              "value": "initialUsers",
+              "Pos": 298
+            },
+            "start": {
+              "type": "NumberLiteral",
+              "value": "2",
+              "Pos": 300
+            },
+            "end": {
+              "type": "NumberLiteral",
+              "value": "6",
+              "Pos": 302
+            },
+            "nodes": [
+              {
+                "Name": "lbracket",
+                "Text": "[",
+                "Pos": 299
+              },
+              {
+                "type": "StartExpression",
+                "value": {
+                  "type": "NumberLiteral",
+                  "value": "2",
+                  "Pos": 300
+                }
+              },
+              {
+                "Name": "colon",
+                "Text": ":",
+                "Pos": 301
+              },
+              {
+                "type": "EndExpression",
+                "value": {
+                  "type": "NumberLiteral",
+                  "value": "6",
+                  "Pos": 302
+                }
+              },
+              {
+                "Name": "rbracket",
+                "Text": "]",
+                "Pos": 303
+              }
+            ]
+          }
+        },
+        "users2": {
+          "type": "auto",
+          "pos": 312,
+          "value": {
+            "type": "SliceExpression",
+            "array": {
+              "type": "Identifier",
+              "value": "initialUsers",
+              "Pos": 307
+            },
+            "start": null,
+            "end": {
+              "type": "NumberLiteral",
+              "value": "4",
+              "Pos": 310
+            },
+            "nodes": [
+              {
+                "Name": "lbracket",
+                "Text": "[",
+                "Pos": 308
+              },
+              {
+                "Name": "colon",
+                "Text": ":",
+                "Pos": 309
+              },
+              {
+                "type": "EndExpression",
+                "value": {
+                  "type": "NumberLiteral",
+                  "value": "4",
+                  "Pos": 310
+                }
+              },
+              {
+                "Name": "rbracket",
+                "Text": "]",
+                "Pos": 311
+              }
+            ]
+          }
+        },
+        "users3": {
+          "type": "auto",
+          "pos": 320,
+          "value": {
+            "type": "SliceExpression",
+            "array": {
+              "type": "Identifier",
+              "value": "initialUsers",
+              "Pos": 315
+            },
+            "start": {
+              "type": "NumberLiteral",
+              "value": "3",
+              "Pos": 317
+            },
+            "end": null,
+            "nodes": [
+              {
+                "Name": "lbracket",
+                "Text": "[",
+                "Pos": 316
+              },
+              {
+                "type": "StartExpression",
+                "value": {
+                  "type": "NumberLiteral",
+                  "value": "3",
+                  "Pos": 317
+                }
+              },
+              {
+                "Name": "colon",
+                "Text": ":",
+                "Pos": 318
+              },
+              {
+                "Name": "rbracket",
+                "Text": "]",
+                "Pos": 319
+              }
+            ]
+          }
+        },
+        "num": {
+          "type": "auto",
+          "pos": 344,
+          "value": {
+            "type": "BinaryOperation",
+            "left": {
+              "type": "NumberLiteral",
+              "value": "1",
+              "Pos": 339
+            },
+            "operator": {
+              "type": "Operator",
+              "value": "+",
+              "Pos": 340
+            },
+            "right": {
+              "type": "BinaryOperation",
+              "left": {
+                "type": "NumberLiteral",
+                "value": "1",
+                "Pos": 341
+              },
+              "operator": {
+                "type": "Operator",
+                "value": "*",
+                "Pos": 342
+              },
+              "right": {
+                "type": "NumberLiteral",
+                "value": "2",
+                "Pos": 343
+              }
+            }
+          }
+        }
+      },
+      "constants": {}
+    },
+    "fact": {
+      "variables": {
+        "x": {
+          "type": "uint",
+          "pos": 355
+        }
+      },
+      "constants": {}
+    }
+  },
+  "types": {}
+}

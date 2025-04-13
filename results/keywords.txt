@@ -1,0 +1,9 @@
+Lexeme                    Token type      Row   Column Id   
+=========================================================
+package                   package         1     1     K:0  
+import                    import          2     1     K:1  
+type                      type            5     1     K:2  
+struct                    struct          5     12    K:3  
+map                       map             6     11    K:4  
+func                      func            9     1     K:5  
+return                    return          10    2     K:6  

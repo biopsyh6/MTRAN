@@ -1,0 +1,2465 @@
+{
+  "type": "Program",
+  "children": [
+    {
+      "type": "PackageDeclaration",
+      "nodes": [
+        {
+          "Name": "package",
+          "Text": "package",
+          "Pos": 0
+        },
+        {
+          "Name": "ident",
+          "Text": "main",
+          "Pos": 1
+        },
+        {
+          "Name": "semicolon",
+          "Text": ";",
+          "Pos": 2
+        }
+      ]
+    },
+    {
+      "type": "ImportDeclaration",
+      "nodes": [
+        {
+          "Name": "import",
+          "Text": "import",
+          "Pos": 3
+        },
+        {
+          "Name": "lpar",
+          "Text": "(",
+          "Pos": 4
+        },
+        {
+          "Name": "rpar",
+          "Text": ")",
+          "Pos": 9
+        }
+      ],
+      "imports": [
+        {
+          "package": {
+            "Name": "string",
+            "Text": "\"fmt\"",
+            "Pos": 5
+          },
+          "semicolon": {
+            "Name": "semicolon",
+            "Text": ";",
+            "Pos": 6
+          }
+        },
+        {
+          "package": {
+            "Name": "string",
+            "Text": "\"test_code/store\"",
+            "Pos": 7
+          },
+          "semicolon": {
+            "Name": "semicolon",
+            "Text": ";",
+            "Pos": 8
+          }
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "main",
+      "receiver": null,
+      "params": [],
+      "return_types": [],
+      "body": [
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "ident",
+              "Text": "myStore",
+              "Pos": 15
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 16
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "FunctionCall",
+                "package": "store",
+                "name": "NewStore",
+                "args": [],
+                "nodes": [
+                  {
+                    "Name": "lpar",
+                    "Text": "(",
+                    "Pos": 19
+                  },
+                  {
+                    "Name": "rpar",
+                    "Text": ")",
+                    "Pos": 20
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 21
+            }
+          ]
+        },
+        {
+          "type": "AssignmentExpression",
+          "left": {
+            "type": "Identifier",
+            "value": "myStore",
+            "Pos": 22
+          },
+          "operator": {
+            "type": "Operator",
+            "value": "=",
+            "Pos": 23
+          },
+          "right": {
+            "type": "FunctionCall",
+            "package": "myStore",
+            "name": "AddProduct",
+            "args": [
+              {
+                "type": "StringLiteral",
+                "value": "\"РќРѕСѓС‚Р±СѓРє\"",
+                "Pos": 27
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "1200.50",
+                "Pos": 29
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "10",
+                "Pos": 31
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lpar",
+                "Text": "(",
+                "Pos": 26
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 28
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 30
+              },
+              {
+                "Name": "rpar",
+                "Text": ")",
+                "Pos": 32
+              }
+            ]
+          },
+          "semicolon": {
+            "type": "Punctuation",
+            "value": ";",
+            "Pos": 33
+          }
+        },
+        {
+          "type": "AssignmentExpression",
+          "left": {
+            "type": "Identifier",
+            "value": "myStore",
+            "Pos": 34
+          },
+          "operator": {
+            "type": "Operator",
+            "value": "=",
+            "Pos": 35
+          },
+          "right": {
+            "type": "FunctionCall",
+            "package": "myStore",
+            "name": "AddProduct",
+            "args": [
+              {
+                "type": "StringLiteral",
+                "value": "\"РњС‹С€СЊ\"",
+                "Pos": 39
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "25.99",
+                "Pos": 41
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "50",
+                "Pos": 43
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lpar",
+                "Text": "(",
+                "Pos": 38
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 40
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 42
+              },
+              {
+                "Name": "rpar",
+                "Text": ")",
+                "Pos": 44
+              }
+            ]
+          },
+          "semicolon": {
+            "type": "Punctuation",
+            "value": ";",
+            "Pos": 45
+          }
+        },
+        {
+          "type": "AssignmentExpression",
+          "left": {
+            "type": "Identifier",
+            "value": "myStore",
+            "Pos": 46
+          },
+          "operator": {
+            "type": "Operator",
+            "value": "=",
+            "Pos": 47
+          },
+          "right": {
+            "type": "FunctionCall",
+            "package": "myStore",
+            "name": "AddProduct",
+            "args": [
+              {
+                "type": "StringLiteral",
+                "value": "\"РљР»Р°РІРёР°С‚СѓСЂР°\"",
+                "Pos": 51
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "45.75",
+                "Pos": 53
+              },
+              {
+                "type": "NumberLiteral",
+                "value": "30",
+                "Pos": 55
+              }
+            ],
+            "nodes": [
+              {
+                "Name": "lpar",
+                "Text": "(",
+                "Pos": 50
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 52
+              },
+              {
+                "Name": "comma",
+                "Text": ",",
+                "Pos": 54
+              },
+              {
+                "Name": "rpar",
+                "Text": ")",
+                "Pos": 56
+              }
+            ]
+          },
+          "semicolon": {
+            "type": "Punctuation",
+            "value": ";",
+            "Pos": 57
+          }
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "StringLiteral",
+              "value": "\"РЎРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ:\"",
+              "Pos": 61
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 60
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 62
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "myStore",
+          "name": "ListProducts",
+          "args": [],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 65
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 66
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "var",
+              "Text": "var",
+              "Pos": 67
+            },
+            {
+              "Name": "ident",
+              "Text": "test",
+              "Pos": 68
+            },
+            {
+              "Name": "assignment",
+              "Text": "=",
+              "Pos": 69
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "StringLiteral",
+                "value": "\"fjdksjkfs\"",
+                "Pos": 70
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 71
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "ident",
+              "Text": "myStore",
+              "Pos": 72
+            },
+            {
+              "Name": "comma",
+              "Text": ",",
+              "Pos": 73
+            },
+            {
+              "Name": "ident",
+              "Text": "success",
+              "Pos": 74
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 75
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "FunctionCall",
+                "package": "myStore",
+                "name": "BuyProduct",
+                "args": [
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"РќРѕСѓС‚Р±СѓРє\"",
+                    "Pos": 79
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "2",
+                    "Pos": 81
+                  }
+                ],
+                "nodes": [
+                  {
+                    "Name": "lpar",
+                    "Text": "(",
+                    "Pos": 78
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 80
+                  },
+                  {
+                    "Name": "rpar",
+                    "Text": ")",
+                    "Pos": 82
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 83
+            }
+          ]
+        },
+        {
+          "type": "IfStatement",
+          "condition": {
+            "type": "Identifier",
+            "value": "success",
+            "Pos": 85
+          },
+          "then": [
+            {
+              "type": "FunctionCall",
+              "package": "fmt",
+              "name": "Println",
+              "args": [
+                {
+                  "type": "StringLiteral",
+                  "value": "\"РџРѕРєСѓРїРєР° СЃРѕРІРµСЂС€РµРЅР°!\"",
+                  "Pos": 90
+                }
+              ],
+              "nodes": [
+                {
+                  "Name": "lpar",
+                  "Text": "(",
+                  "Pos": 89
+                },
+                {
+                  "Name": "rpar",
+                  "Text": ")",
+                  "Pos": 91
+                }
+              ]
+            }
+          ],
+          "else": [
+            {
+              "type": "FunctionCall",
+              "package": "fmt",
+              "name": "Println",
+              "args": [
+                {
+                  "type": "StringLiteral",
+                  "value": "\"РћС€РёР±РєР° РїСЂРё РїРѕРєСѓРїРєРµ.\"",
+                  "Pos": 98
+                }
+              ],
+              "nodes": [
+                {
+                  "Name": "lpar",
+                  "Text": "(",
+                  "Pos": 97
+                },
+                {
+                  "Name": "rpar",
+                  "Text": ")",
+                  "Pos": 99
+                }
+              ]
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "if",
+              "Text": "if",
+              "Pos": 84
+            },
+            {
+              "type": "Condition",
+              "value": {
+                "type": "Identifier",
+                "value": "success",
+                "Pos": 85
+              }
+            },
+            {
+              "Name": "lbrace",
+              "Text": "{",
+              "Pos": 86
+            },
+            {
+              "Name": "rbrace",
+              "Text": "}",
+              "Pos": 92
+            },
+            {
+              "Name": "else",
+              "Text": "else",
+              "Pos": 93
+            },
+            {
+              "Name": "lbrace",
+              "Text": "{",
+              "Pos": 94
+            },
+            {
+              "Name": "rbrace",
+              "Text": "}",
+              "Pos": 100
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "ident",
+              "Text": "myStore",
+              "Pos": 101
+            },
+            {
+              "Name": "comma",
+              "Text": ",",
+              "Pos": 102
+            },
+            {
+              "Name": "ident",
+              "Text": "success",
+              "Pos": 103
+            },
+            {
+              "Name": "assignment",
+              "Text": "=",
+              "Pos": 104
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "FunctionCall",
+                "package": "myStore",
+                "name": "BuyProduct",
+                "args": [
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"РњС‹С€СЊ\"",
+                    "Pos": 108
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "5",
+                    "Pos": 110
+                  }
+                ],
+                "nodes": [
+                  {
+                    "Name": "lpar",
+                    "Text": "(",
+                    "Pos": 107
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 109
+                  },
+                  {
+                    "Name": "rpar",
+                    "Text": ")",
+                    "Pos": 111
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 112
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "StringLiteral",
+              "value": "\"\\nРџРѕСЃР»Рµ РїРѕРєСѓРїРєРё:\"",
+              "Pos": 116
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 115
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 117
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "myStore",
+          "name": "ListProducts",
+          "args": [],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 120
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 121
+            }
+          ]
+        },
+        {
+          "type": "ForStatement",
+          "init": {
+            "type": "VariableDeclaration",
+            "nodes": [
+              {
+                "Name": "ident",
+                "Text": "i",
+                "Pos": 123
+              },
+              {
+                "Name": "short_declaration",
+                "Text": ":=",
+                "Pos": 124
+              },
+              {
+                "type": "Expression",
+                "value": {
+                  "type": "NumberLiteral",
+                  "value": "1",
+                  "Pos": 125
+                }
+              }
+            ]
+          },
+          "condition": {
+            "type": "BinaryOperation",
+            "left": {
+              "type": "Identifier",
+              "value": "i",
+              "Pos": 127
+            },
+            "operator": {
+              "type": "Operator",
+              "value": "<",
+              "Pos": 128
+            },
+            "right": {
+              "type": "NumberLiteral",
+              "value": "10",
+              "Pos": 129
+            }
+          },
+          "post": {
+            "type": "UnaryOperation",
+            "operator": {
+              "type": "Operator",
+              "value": "++",
+              "Pos": 132
+            },
+            "operand": {
+              "type": "Identifier",
+              "value": "i",
+              "Pos": 131
+            },
+            "is_prefix": false
+          },
+          "range": null,
+          "body": [
+            {
+              "type": "FunctionCall",
+              "package": "fmt",
+              "name": "Println",
+              "args": [
+                {
+                  "type": "BinaryOperation",
+                  "left": {
+                    "type": "Identifier",
+                    "value": "i",
+                    "Pos": 137
+                  },
+                  "operator": {
+                    "type": "Operator",
+                    "value": "*",
+                    "Pos": 138
+                  },
+                  "right": {
+                    "type": "Identifier",
+                    "value": "i",
+                    "Pos": 139
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "Name": "lpar",
+                  "Text": "(",
+                  "Pos": 136
+                },
+                {
+                  "Name": "rpar",
+                  "Text": ")",
+                  "Pos": 140
+                }
+              ]
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "for",
+              "Text": "for",
+              "Pos": 122
+            },
+            {
+              "Name": "ident",
+              "Text": "i",
+              "Pos": 123
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 124
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "NumberLiteral",
+                "value": "1",
+                "Pos": 125
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 126
+            },
+            {
+              "type": "Condition",
+              "value": {
+                "type": "BinaryOperation",
+                "left": {
+                  "type": "Identifier",
+                  "value": "i",
+                  "Pos": 127
+                },
+                "operator": {
+                  "type": "Operator",
+                  "value": "<",
+                  "Pos": 128
+                },
+                "right": {
+                  "type": "NumberLiteral",
+                  "value": "10",
+                  "Pos": 129
+                }
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 130
+            },
+            {
+              "type": "Post",
+              "value": {
+                "type": "UnaryOperation",
+                "operator": {
+                  "type": "Operator",
+                  "value": "++",
+                  "Pos": 132
+                },
+                "operand": {
+                  "type": "Identifier",
+                  "value": "i",
+                  "Pos": 131
+                },
+                "is_prefix": false
+              }
+            },
+            {
+              "Name": "lbrace",
+              "Text": "{",
+              "Pos": 133
+            },
+            {
+              "Name": "rbrace",
+              "Text": "}",
+              "Pos": 141
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "var",
+              "Text": "var",
+              "Pos": 142
+            },
+            {
+              "Name": "ident",
+              "Text": "numbers",
+              "Pos": 143
+            },
+            {
+              "Name": "assignment",
+              "Text": "=",
+              "Pos": 144
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "ArrayLiteral",
+                "array_type": "int",
+                "size": "10",
+                "elements": [
+                  {
+                    "type": "NumberLiteral",
+                    "value": "1",
+                    "Pos": 150
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "-2",
+                    "Pos": 152
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "3",
+                    "Pos": 154
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "-4",
+                    "Pos": 156
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "5",
+                    "Pos": 158
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "-6",
+                    "Pos": 160
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "7",
+                    "Pos": 162
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "8",
+                    "Pos": 164
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "-9",
+                    "Pos": 166
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "10",
+                    "Pos": 168
+                  }
+                ],
+                "nodes": [
+                  {
+                    "Name": "lbracket",
+                    "Text": "[",
+                    "Pos": 145
+                  },
+                  {
+                    "Name": "integer",
+                    "Text": "10",
+                    "Pos": 146
+                  },
+                  {
+                    "Name": "rbracket",
+                    "Text": "]",
+                    "Pos": 147
+                  },
+                  {
+                    "Name": "ArrayType",
+                    "Text": "int",
+                    "Pos": 148
+                  },
+                  {
+                    "Name": "lbrace",
+                    "Text": "{",
+                    "Pos": 149
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 151
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 153
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 155
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 157
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 159
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 161
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 163
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 165
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 167
+                  },
+                  {
+                    "Name": "rbrace",
+                    "Text": "}",
+                    "Pos": 169
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 170
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "var",
+              "Text": "var",
+              "Pos": 171
+            },
+            {
+              "Name": "ident",
+              "Text": "sum",
+              "Pos": 172
+            },
+            {
+              "Name": "assignment",
+              "Text": "=",
+              "Pos": 173
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "NumberLiteral",
+                "value": "0",
+                "Pos": 174
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 175
+            }
+          ]
+        },
+        {
+          "type": "ForStatement",
+          "init": null,
+          "condition": null,
+          "post": null,
+          "range": {
+            "type": "RangeStatement",
+            "variables": [
+              {
+                "type": "Identifier",
+                "value": "_",
+                "Pos": 177
+              },
+              {
+                "type": "Identifier",
+                "value": "value",
+                "Pos": 179
+              }
+            ],
+            "expression": {
+              "type": "Identifier",
+              "value": "numbers",
+              "Pos": 182
+            }
+          },
+          "body": [
+            {
+              "type": "IfStatement",
+              "condition": {
+                "type": "BinaryOperation",
+                "left": {
+                  "type": "Identifier",
+                  "value": "value",
+                  "Pos": 185
+                },
+                "operator": {
+                  "type": "Operator",
+                  "value": "<",
+                  "Pos": 186
+                },
+                "right": {
+                  "type": "NumberLiteral",
+                  "value": "0",
+                  "Pos": 187
+                }
+              },
+              "then": [
+                {
+                  "type": "ContinueStatement",
+                  "nodes": [
+                    {
+                      "Name": "continue",
+                      "Text": "continue",
+                      "Pos": 189
+                    }
+                  ]
+                }
+              ],
+              "else": null,
+              "nodes": [
+                {
+                  "Name": "if",
+                  "Text": "if",
+                  "Pos": 184
+                },
+                {
+                  "type": "Condition",
+                  "value": {
+                    "type": "BinaryOperation",
+                    "left": {
+                      "type": "Identifier",
+                      "value": "value",
+                      "Pos": 185
+                    },
+                    "operator": {
+                      "type": "Operator",
+                      "value": "<",
+                      "Pos": 186
+                    },
+                    "right": {
+                      "type": "NumberLiteral",
+                      "value": "0",
+                      "Pos": 187
+                    }
+                  }
+                },
+                {
+                  "Name": "lbrace",
+                  "Text": "{",
+                  "Pos": 188
+                },
+                {
+                  "Name": "rbrace",
+                  "Text": "}",
+                  "Pos": 190
+                }
+              ]
+            },
+            {
+              "type": "AssignmentExpression",
+              "left": {
+                "type": "Identifier",
+                "value": "sum",
+                "Pos": 191
+              },
+              "operator": {
+                "type": "Operator",
+                "value": "+=",
+                "Pos": 192
+              },
+              "right": {
+                "type": "Identifier",
+                "value": "value",
+                "Pos": 193
+              },
+              "semicolon": null
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "for",
+              "Text": "for",
+              "Pos": 176
+            },
+            {
+              "Name": "ident",
+              "Text": "_",
+              "Pos": 177
+            },
+            {
+              "Name": "comma",
+              "Text": ",",
+              "Pos": 178
+            },
+            {
+              "Name": "ident",
+              "Text": "value",
+              "Pos": 179
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 180
+            },
+            {
+              "Name": "range",
+              "Text": "range",
+              "Pos": 181
+            },
+            {
+              "type": "RangeExpression",
+              "value": {
+                "type": "Identifier",
+                "value": "numbers",
+                "Pos": 182
+              }
+            },
+            {
+              "Name": "lbrace",
+              "Text": "{",
+              "Pos": 183
+            },
+            {
+              "Name": "rbrace",
+              "Text": "}",
+              "Pos": 194
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "StringLiteral",
+              "value": "\"Sum:\"",
+              "Pos": 198
+            },
+            {
+              "type": "Identifier",
+              "value": "sum",
+              "Pos": 200
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 197
+            },
+            {
+              "Name": "comma",
+              "Text": ",",
+              "Pos": 199
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 201
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "var",
+              "Text": "var",
+              "Pos": 202
+            },
+            {
+              "Name": "ident",
+              "Text": "numbers1",
+              "Pos": 203
+            },
+            {
+              "Name": "assignment",
+              "Text": "=",
+              "Pos": 204
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "ArrayLiteral",
+                "array_type": "int",
+                "size": "10",
+                "elements": [
+                  {
+                    "type": "NumberLiteral",
+                    "value": "1",
+                    "Pos": 210
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "2",
+                    "Pos": 212
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "3",
+                    "Pos": 214
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "4",
+                    "Pos": 216
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "5",
+                    "Pos": 218
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "6",
+                    "Pos": 220
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "7",
+                    "Pos": 222
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "8",
+                    "Pos": 224
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "9",
+                    "Pos": 226
+                  },
+                  {
+                    "type": "NumberLiteral",
+                    "value": "10",
+                    "Pos": 228
+                  }
+                ],
+                "nodes": [
+                  {
+                    "Name": "lbracket",
+                    "Text": "[",
+                    "Pos": 205
+                  },
+                  {
+                    "Name": "integer",
+                    "Text": "10",
+                    "Pos": 206
+                  },
+                  {
+                    "Name": "rbracket",
+                    "Text": "]",
+                    "Pos": 207
+                  },
+                  {
+                    "Name": "ArrayType",
+                    "Text": "int",
+                    "Pos": 208
+                  },
+                  {
+                    "Name": "lbrace",
+                    "Text": "{",
+                    "Pos": 209
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 211
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 213
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 215
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 217
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 219
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 221
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 223
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 225
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 227
+                  },
+                  {
+                    "Name": "rbrace",
+                    "Text": "}",
+                    "Pos": 229
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 230
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "var",
+              "Text": "var",
+              "Pos": 231
+            },
+            {
+              "Name": "ident",
+              "Text": "sum2",
+              "Pos": 232
+            },
+            {
+              "Name": "assignment",
+              "Text": "=",
+              "Pos": 233
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "NumberLiteral",
+                "value": "0",
+                "Pos": 234
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 235
+            }
+          ]
+        },
+        {
+          "type": "ForStatement",
+          "init": null,
+          "condition": null,
+          "post": null,
+          "range": {
+            "type": "RangeStatement",
+            "variables": [
+              {
+                "type": "Identifier",
+                "value": "_",
+                "Pos": 237
+              },
+              {
+                "type": "Identifier",
+                "value": "value",
+                "Pos": 239
+              }
+            ],
+            "expression": {
+              "type": "Identifier",
+              "value": "numbers1",
+              "Pos": 242
+            }
+          },
+          "body": [
+            {
+              "type": "IfStatement",
+              "condition": {
+                "type": "BinaryOperation",
+                "left": {
+                  "type": "Identifier",
+                  "value": "value",
+                  "Pos": 245
+                },
+                "operator": {
+                  "type": "Operator",
+                  "value": ">",
+                  "Pos": 246
+                },
+                "right": {
+                  "type": "NumberLiteral",
+                  "value": "4",
+                  "Pos": 247
+                }
+              },
+              "then": [
+                {
+                  "type": "BreakStatement",
+                  "nodes": [
+                    {
+                      "Name": "break",
+                      "Text": "break",
+                      "Pos": 249
+                    }
+                  ]
+                }
+              ],
+              "else": null,
+              "nodes": [
+                {
+                  "Name": "if",
+                  "Text": "if",
+                  "Pos": 244
+                },
+                {
+                  "type": "Condition",
+                  "value": {
+                    "type": "BinaryOperation",
+                    "left": {
+                      "type": "Identifier",
+                      "value": "value",
+                      "Pos": 245
+                    },
+                    "operator": {
+                      "type": "Operator",
+                      "value": ">",
+                      "Pos": 246
+                    },
+                    "right": {
+                      "type": "NumberLiteral",
+                      "value": "4",
+                      "Pos": 247
+                    }
+                  }
+                },
+                {
+                  "Name": "lbrace",
+                  "Text": "{",
+                  "Pos": 248
+                },
+                {
+                  "Name": "rbrace",
+                  "Text": "}",
+                  "Pos": 250
+                }
+              ]
+            },
+            {
+              "type": "AssignmentExpression",
+              "left": {
+                "type": "Identifier",
+                "value": "sum2",
+                "Pos": 251
+              },
+              "operator": {
+                "type": "Operator",
+                "value": "+=",
+                "Pos": 252
+              },
+              "right": {
+                "type": "Identifier",
+                "value": "value",
+                "Pos": 253
+              },
+              "semicolon": null
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "for",
+              "Text": "for",
+              "Pos": 236
+            },
+            {
+              "Name": "ident",
+              "Text": "_",
+              "Pos": 237
+            },
+            {
+              "Name": "comma",
+              "Text": ",",
+              "Pos": 238
+            },
+            {
+              "Name": "ident",
+              "Text": "value",
+              "Pos": 239
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 240
+            },
+            {
+              "Name": "range",
+              "Text": "range",
+              "Pos": 241
+            },
+            {
+              "type": "RangeExpression",
+              "value": {
+                "type": "Identifier",
+                "value": "numbers1",
+                "Pos": 242
+              }
+            },
+            {
+              "Name": "lbrace",
+              "Text": "{",
+              "Pos": 243
+            },
+            {
+              "Name": "rbrace",
+              "Text": "}",
+              "Pos": 254
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "StringLiteral",
+              "value": "\"Sum2:\"",
+              "Pos": 258
+            },
+            {
+              "type": "Identifier",
+              "value": "sum2",
+              "Pos": 260
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 257
+            },
+            {
+              "Name": "comma",
+              "Text": ",",
+              "Pos": 259
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 261
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "StringLiteral",
+              "value": "\"Factorial:\"",
+              "Pos": 265
+            },
+            {
+              "type": "FunctionCall",
+              "package": null,
+              "name": "fact",
+              "args": [
+                {
+                  "type": "NumberLiteral",
+                  "value": "5",
+                  "Pos": 269
+                }
+              ],
+              "nodes": [
+                {
+                  "Name": "lpar",
+                  "Text": "(",
+                  "Pos": 268
+                },
+                {
+                  "Name": "rpar",
+                  "Text": ")",
+                  "Pos": 270
+                }
+              ]
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 264
+            },
+            {
+              "Name": "comma",
+              "Text": ",",
+              "Pos": 266
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 271
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "ident",
+              "Text": "initialUsers",
+              "Pos": 272
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 273
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "ArrayLiteral",
+                "array_type": "string",
+                "size": "8",
+                "elements": [
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Bob\"",
+                    "Pos": 279
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Alice\"",
+                    "Pos": 281
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Kate\"",
+                    "Pos": 283
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Sam\"",
+                    "Pos": 285
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Tom\"",
+                    "Pos": 287
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Paul\"",
+                    "Pos": 289
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Mike\"",
+                    "Pos": 291
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "value": "\"Robert\"",
+                    "Pos": 293
+                  }
+                ],
+                "nodes": [
+                  {
+                    "Name": "lbracket",
+                    "Text": "[",
+                    "Pos": 274
+                  },
+                  {
+                    "Name": "integer",
+                    "Text": "8",
+                    "Pos": 275
+                  },
+                  {
+                    "Name": "rbracket",
+                    "Text": "]",
+                    "Pos": 276
+                  },
+                  {
+                    "Name": "ArrayType",
+                    "Text": "string",
+                    "Pos": 277
+                  },
+                  {
+                    "Name": "lbrace",
+                    "Text": "{",
+                    "Pos": 278
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 280
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 282
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 284
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 286
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 288
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 290
+                  },
+                  {
+                    "Name": "comma",
+                    "Text": ",",
+                    "Pos": 292
+                  },
+                  {
+                    "Name": "rbrace",
+                    "Text": "}",
+                    "Pos": 294
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 295
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "ident",
+              "Text": "users1",
+              "Pos": 296
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 297
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "SliceExpression",
+                "array": {
+                  "type": "Identifier",
+                  "value": "initialUsers",
+                  "Pos": 298
+                },
+                "start": {
+                  "type": "NumberLiteral",
+                  "value": "2",
+                  "Pos": 300
+                },
+                "end": {
+                  "type": "NumberLiteral",
+                  "value": "6",
+                  "Pos": 302
+                },
+                "nodes": [
+                  {
+                    "Name": "lbracket",
+                    "Text": "[",
+                    "Pos": 299
+                  },
+                  {
+                    "type": "StartExpression",
+                    "value": {
+                      "type": "NumberLiteral",
+                      "value": "2",
+                      "Pos": 300
+                    }
+                  },
+                  {
+                    "Name": "colon",
+                    "Text": ":",
+                    "Pos": 301
+                  },
+                  {
+                    "type": "EndExpression",
+                    "value": {
+                      "type": "NumberLiteral",
+                      "value": "6",
+                      "Pos": 302
+                    }
+                  },
+                  {
+                    "Name": "rbracket",
+                    "Text": "]",
+                    "Pos": 303
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 304
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "ident",
+              "Text": "users2",
+              "Pos": 305
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 306
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "SliceExpression",
+                "array": {
+                  "type": "Identifier",
+                  "value": "initialUsers",
+                  "Pos": 307
+                },
+                "start": null,
+                "end": {
+                  "type": "NumberLiteral",
+                  "value": "4",
+                  "Pos": 310
+                },
+                "nodes": [
+                  {
+                    "Name": "lbracket",
+                    "Text": "[",
+                    "Pos": 308
+                  },
+                  {
+                    "Name": "colon",
+                    "Text": ":",
+                    "Pos": 309
+                  },
+                  {
+                    "type": "EndExpression",
+                    "value": {
+                      "type": "NumberLiteral",
+                      "value": "4",
+                      "Pos": 310
+                    }
+                  },
+                  {
+                    "Name": "rbracket",
+                    "Text": "]",
+                    "Pos": 311
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 312
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "ident",
+              "Text": "users3",
+              "Pos": 313
+            },
+            {
+              "Name": "short_declaration",
+              "Text": ":=",
+              "Pos": 314
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "SliceExpression",
+                "array": {
+                  "type": "Identifier",
+                  "value": "initialUsers",
+                  "Pos": 315
+                },
+                "start": {
+                  "type": "NumberLiteral",
+                  "value": "3",
+                  "Pos": 317
+                },
+                "end": null,
+                "nodes": [
+                  {
+                    "Name": "lbracket",
+                    "Text": "[",
+                    "Pos": 316
+                  },
+                  {
+                    "type": "StartExpression",
+                    "value": {
+                      "type": "NumberLiteral",
+                      "value": "3",
+                      "Pos": 317
+                    }
+                  },
+                  {
+                    "Name": "colon",
+                    "Text": ":",
+                    "Pos": 318
+                  },
+                  {
+                    "Name": "rbracket",
+                    "Text": "]",
+                    "Pos": 319
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 320
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "Identifier",
+              "value": "users1",
+              "Pos": 324
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 323
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 325
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "Identifier",
+              "value": "users2",
+              "Pos": 329
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 328
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 330
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "Identifier",
+              "value": "users3",
+              "Pos": 334
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 333
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 335
+            }
+          ]
+        },
+        {
+          "type": "VariableDeclaration",
+          "nodes": [
+            {
+              "Name": "var",
+              "Text": "var",
+              "Pos": 336
+            },
+            {
+              "Name": "ident",
+              "Text": "num",
+              "Pos": 337
+            },
+            {
+              "Name": "assignment",
+              "Text": "=",
+              "Pos": 338
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "BinaryOperation",
+                "left": {
+                  "type": "NumberLiteral",
+                  "value": "1",
+                  "Pos": 339
+                },
+                "operator": {
+                  "type": "Operator",
+                  "value": "+",
+                  "Pos": 340
+                },
+                "right": {
+                  "type": "BinaryOperation",
+                  "left": {
+                    "type": "NumberLiteral",
+                    "value": "1",
+                    "Pos": 341
+                  },
+                  "operator": {
+                    "type": "Operator",
+                    "value": "*",
+                    "Pos": 342
+                  },
+                  "right": {
+                    "type": "NumberLiteral",
+                    "value": "2",
+                    "Pos": 343
+                  }
+                }
+              }
+            },
+            {
+              "Name": "semicolon",
+              "Text": ";",
+              "Pos": 344
+            }
+          ]
+        },
+        {
+          "type": "FunctionCall",
+          "package": "fmt",
+          "name": "Println",
+          "args": [
+            {
+              "type": "Identifier",
+              "value": "num",
+              "Pos": 348
+            }
+          ],
+          "nodes": [
+            {
+              "Name": "lpar",
+              "Text": "(",
+              "Pos": 347
+            },
+            {
+              "Name": "rpar",
+              "Text": ")",
+              "Pos": 349
+            }
+          ],
+          "semicolon": {
+            "type": "Punctuation",
+            "value": ";",
+            "Pos": 350
+          }
+        }
+      ],
+      "nodes": [
+        {
+          "Name": "func",
+          "Text": "func",
+          "Pos": 10
+        },
+        {
+          "Name": "ident",
+          "Text": "main",
+          "Pos": 11
+        },
+        {
+          "Name": "lpar",
+          "Text": "(",
+          "Pos": 12
+        },
+        {
+          "Name": "rpar",
+          "Text": ")",
+          "Pos": 13
+        },
+        {
+          "Name": "lbrace",
+          "Text": "{",
+          "Pos": 14
+        },
+        {
+          "Name": "rbrace",
+          "Text": "}",
+          "Pos": 351
+        }
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "name": "fact",
+      "receiver": null,
+      "params": [
+        {
+          "param_name": {
+            "Name": "ident",
+            "Text": "x",
+            "Pos": 355
+          },
+          "param_type": "uint"
+        }
+      ],
+      "return_types": [
+        "uint"
+      ],
+      "body": [
+        {
+          "type": "IfStatement",
+          "condition": {
+            "type": "BinaryOperation",
+            "left": {
+              "type": "Identifier",
+              "value": "x",
+              "Pos": 359
+            },
+            "operator": {
+              "type": "Operator",
+              "value": "==",
+              "Pos": 360
+            },
+            "right": {
+              "type": "NumberLiteral",
+              "value": "0",
+              "Pos": 361
+            }
+          },
+          "then": [
+            {
+              "type": "ReturnStatement",
+              "expression": {
+                "type": "NumberLiteral",
+                "value": "1",
+                "Pos": 364
+              },
+              "nodes": [
+                {
+                  "Name": "return",
+                  "Text": "return",
+                  "Pos": 363
+                },
+                {
+                  "type": "Expression",
+                  "value": {
+                    "type": "NumberLiteral",
+                    "value": "1",
+                    "Pos": 364
+                  }
+                }
+              ]
+            }
+          ],
+          "else": null,
+          "nodes": [
+            {
+              "Name": "if",
+              "Text": "if",
+              "Pos": 358
+            },
+            {
+              "type": "Condition",
+              "value": {
+                "type": "BinaryOperation",
+                "left": {
+                  "type": "Identifier",
+                  "value": "x",
+                  "Pos": 359
+                },
+                "operator": {
+                  "type": "Operator",
+                  "value": "==",
+                  "Pos": 360
+                },
+                "right": {
+                  "type": "NumberLiteral",
+                  "value": "0",
+                  "Pos": 361
+                }
+              }
+            },
+            {
+              "Name": "lbrace",
+              "Text": "{",
+              "Pos": 362
+            },
+            {
+              "Name": "rbrace",
+              "Text": "}",
+              "Pos": 365
+            }
+          ]
+        },
+        {
+          "type": "ReturnStatement",
+          "expression": {
+            "type": "BinaryOperation",
+            "left": {
+              "type": "Identifier",
+              "value": "x",
+              "Pos": 367
+            },
+            "operator": {
+              "type": "Operator",
+              "value": "*",
+              "Pos": 368
+            },
+            "right": {
+              "type": "FunctionCall",
+              "package": null,
+              "name": "fact",
+              "args": [
+                {
+                  "type": "BinaryOperation",
+                  "left": {
+                    "type": "Identifier",
+                    "value": "x",
+                    "Pos": 371
+                  },
+                  "operator": {
+                    "type": "Operator",
+                    "value": "-",
+                    "Pos": 372
+                  },
+                  "right": {
+                    "type": "NumberLiteral",
+                    "value": "1",
+                    "Pos": 373
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "Name": "lpar",
+                  "Text": "(",
+                  "Pos": 370
+                },
+                {
+                  "Name": "rpar",
+                  "Text": ")",
+                  "Pos": 374
+                }
+              ]
+            }
+          },
+          "nodes": [
+            {
+              "Name": "return",
+              "Text": "return",
+              "Pos": 366
+            },
+            {
+              "type": "Expression",
+              "value": {
+                "type": "BinaryOperation",
+                "left": {
+                  "type": "Identifier",
+                  "value": "x",
+                  "Pos": 367
+                },
+                "operator": {
+                  "type": "Operator",
+                  "value": "*",
+                  "Pos": 368
+                },
+                "right": {
+                  "type": "FunctionCall",
+                  "package": null,
+                  "name": "fact",
+                  "args": [
+                    {
+                      "type": "BinaryOperation",
+                      "left": {
+                        "type": "Identifier",
+                        "value": "x",
+                        "Pos": 371
+                      },
+                      "operator": {
+                        "type": "Operator",
+                        "value": "-",
+                        "Pos": 372
+                      },
+                      "right": {
+                        "type": "NumberLiteral",
+                        "value": "1",
+                        "Pos": 373
+                      }
+                    }
+                  ],
+                  "nodes": [
+                    {
+                      "Name": "lpar",
+                      "Text": "(",
+                      "Pos": 370
+                    },
+                    {
+                      "Name": "rpar",
+                      "Text": ")",
+                      "Pos": 374
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "Name": "func",
+          "Text": "func",
+          "Pos": 352
+        },
+        {
+          "Name": "ident",
+          "Text": "fact",
+          "Pos": 353
+        },
+        {
+          "Name": "lpar",
+          "Text": "(",
+          "Pos": 354
+        },
+        {
+          "Name": "rpar",
+          "Text": ")",
+          "Pos": 356
+        },
+        {
+          "Name": "lbrace",
+          "Text": "{",
+          "Pos": 357
+        },
+        {
+          "Name": "rbrace",
+          "Text": "}",
+          "Pos": 375
+        }
+      ]
+    }
+  ]
+}
