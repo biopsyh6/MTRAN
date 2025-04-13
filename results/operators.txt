@@ -1,3 +1,9 @@
 Lexeme                    Token type      Row   Column Id   
 =========================================================
 =                         assignment      14    19    O:0  
+:=                        short_declaration 19    17    O:1  
+!                         unary           27    5     O:2  
+<                         comparison      34    25    O:3  
+==                        comparison      38    25    O:4  
+-=                        assignment      42    21    O:5  
+>                         comparison      47    14    O:6  

@@ -7,3 +7,10 @@ struct                    struct          5     12    K:3
 map                       map             6     11    K:4  
 func                      func            9     1     K:5  
 return                    return          10    2     K:6  
+for                       for             19    2     K:7  
+range                     range           19    20    K:8  
+if                        if              27    2     K:9  
+switch                    switch          33    2     K:10 
+case                      case            34    3     K:11 
+default                   default         41    3     K:12 
+else                      else            50    4     K:13 

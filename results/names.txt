@@ -20,3 +20,24 @@ int                       ident           13    64    N:16
 Name                      ident           14    37    N:17 
 Price                     ident           14    49    N:18 
 Quantity                  ident           14    63    N:19 
+ListProducts              ident           18    16    N:20 
+_                         ident           19    6     N:21 
+Info                      ident           20    11    N:22 
+BuyProduct                ident           24    16    N:23 
+bool                      ident           24    62    N:24 
+exists                    ident           25    11    N:25 
+fmt                       ident           28    3     N:26 
+Println                   ident           28    7     N:27 
+"Товар не найден!" string          28    15    N:28 
+false                     ident           29    13    N:29 
+purchasedQuantities       ident           32    2     N:30 
+0                         integer         32    37    N:31 
+"Недостаточно товара в наличии!" string          35    16    N:32 
+"Вы купили весь товар!" string          39    16    N:33 
+Printf                    ident           43    8     N:34 
+"Вы купили %d шт. товара '%s'. Осталось: %d\n" string          43    15    N:35 
+append                    ident           45    24    N:36 
+1                         integer         47    16    N:37 
+"Количество после сдвига: %d\n" string          49    14    N:38 
+"Купленные количества: %v\n" string          57    13    N:39 
+true                      ident           59    12    N:40 

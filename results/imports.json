@@ -2,13 +2,7 @@
   {
     "Package": {
       "Name": "fmt",
-      "Pos": 5
-    }
-  },
-  {
-    "Package": {
-      "Name": "test_code/store",
-      "Pos": 7
+      "Pos": 4
     }
   }
 ]

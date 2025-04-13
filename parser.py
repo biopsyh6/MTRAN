@@ -509,16 +509,17 @@ class Parser:
         left = self.parse_comparison_expression()
         operator = self.current_token()
         
-        if operator and operator.kind in {"assignment", "short_declaration"} and operator.text in {"=", ":=", "+="}:
+        # Поддержка всех операторов присваивания Go
+        if operator and operator.kind in {"assignment", "short_declaration"} and operator.text in {"=", ":=", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<=", ">>="}:
             operator_pos = self.get_next_token_pos()
             self.consume_token()
             right = self.parse_comparison_expression()
             
-            # Check if right is a potential struct initialization
-            if right["type"] == "Identifier":
+            # Проверка, является ли правая часть потенциальной инициализацией структуры
+            if right["type"] in {"Identifier", "FieldAccess"}:
                 next_token = self.current_token()
                 if next_token and next_token.kind == "lbrace":
-                    self.pos -= 1  # Rewind to reparse the identifier
+                    self.pos -= 1  # Перемотка для повторного разбора идентификатора или доступа к полю
                     self.token_counter -= 1
                     right = self.parse_struct_initialization()
             
@@ -542,7 +543,8 @@ class Parser:
         
         while True:
             operator = self.current_token()
-            if operator and operator.kind == "comparison" and operator.text in {"==", "!=", "<", ">", "<=", ">="}:
+            if operator and (operator.kind == "comparison" and operator.text in {"==", "!=", "<", ">", "<=", ">="} or
+                            operator.kind == "logical" and operator.text in {"&&", "||"}):
                 self.consume_token()
                 operator_pos = self.get_next_token_pos()
                 right = self.parse_additive_expression()
@@ -604,6 +606,14 @@ class Parser:
         if token.kind == "ident":
             identifier = {"type": "Identifier", "value": token.text, "Pos": self.get_next_token_pos()}
             self.consume_token()
+            
+            # Проверяем, является ли это началом инициализации структуры (например, Store{...})
+            next_token = self.current_token()
+            if next_token and next_token.kind == "lbrace" and identifier["value"] in self.symbol_table["types"]:
+                # Перематываем назад, чтобы parse_struct_initialization обработал идентификатор
+                self.pos -= 1
+                self.token_counter -= 1
+                return self.parse_struct_initialization()
             
             while True:
                 next_token = self.current_token()
@@ -687,6 +697,16 @@ class Parser:
                 "is_prefix": True
             }
         
+        if token.kind == "unary" and token.text == "!":
+            self.consume_token()
+            operand = self.parse_primary_expression()
+            return {
+                "type": "UnaryOperation",
+                "operator": {"type": "Operator", "value": "!", "Pos": self.get_next_token_pos()},
+                "operand": operand,
+                "is_prefix": True
+            }
+        
         if token.kind in {"arithmetic", "increment_decrement"} and token.text in {"++", "--"}:
             operator = token.text
             self.consume_token()
@@ -704,7 +724,7 @@ class Parser:
         if token.kind == "float":
             self.consume_token()
             return {"type": "NumberLiteral", "value": token.text, "Pos": self.get_next_token_pos()}
-        if token.kind == "string":
+        if token.kind in {"string", "raw_string"}:  # Поддержка raw_string
             self.consume_token()
             return {"type": "StringLiteral", "value": token.text, "Pos": self.get_next_token_pos()}
         if token.kind == "lpar":
@@ -754,13 +774,11 @@ class Parser:
 
         args = []
         if function_name == "make":
-            # Для функции `make` первый аргумент — это тип
             type_arg = self.parse_type()
             if not type_arg:
                 raise ParseError("Expected type argument for 'make'")
             args.append({"type": "Type", "value": type_arg})
             
-            # Проверяем, есть ли дополнительные аргументы (например, размер или емкость)
             comma = self.current_token()
             if comma and comma.kind == "comma":
                 nodes.append({"Name": comma.kind, "Text": comma.text, "Pos": self.get_next_token_pos()})
@@ -773,7 +791,6 @@ class Parser:
                         nodes.append({"Name": comma.kind, "Text": comma.text, "Pos": self.get_next_token_pos()})
                         self.consume_token()
         else:
-            # Обычная обработка аргументов как выражений
             while self.current_token() and self.current_token().kind != "rpar":
                 arg = self.parse_expression()
                 args.append(arg)
@@ -1079,6 +1096,130 @@ class Parser:
             }
 
 
+    def parse_expression_list(self) -> List[Dict[str, Any]]:
+        expressions = []
+        while self.current_token() and self.current_token().kind not in {"semicolon", "rbrace", "EOF"}:
+            expr = self.parse_expression()
+            expressions.append(expr)
+            
+            comma = self.current_token()
+            if comma and comma.kind == "comma":
+                self.consume_token()
+            else:
+                break
+        return expressions
+
+
+    def parse_switch_statement(self) -> Optional[Dict[str, Any]]:
+        token = self.current_token()
+        if not token or token.kind != "switch":
+            return None
+
+        nodes = []
+        nodes.append({"Name": token.kind, "Text": token.text, "Pos": self.get_next_token_pos()})
+        self.consume_token()
+
+        # Проверяем, есть ли выражение switch (опционально)
+        expr = None
+        next_token = self.current_token()
+        if next_token and next_token.kind not in {"lbrace", "semicolon", "EOF"}:
+            expr = self.parse_expression()
+            nodes.append({"type": "Expression", "value": expr})
+
+        # Открывающая фигурная скобка
+        l_brace = self.current_token()
+        if l_brace and l_brace.kind == "lbrace":
+            nodes.append({"Name": l_brace.kind, "Text": l_brace.text, "Pos": self.get_next_token_pos()})
+            self.consume_token()
+        else:
+            raise ParseError("Expected '{' after switch")
+
+        # Разбор веток case и default
+        cases = []
+        default_case = None
+        while self.current_token() and self.current_token().kind != "rbrace":
+            case_token = self.current_token()
+            if case_token and case_token.kind == "case":
+                nodes.append({"Name": case_token.kind, "Text": case_token.text, "Pos": self.get_next_token_pos()})
+                self.consume_token()
+
+                # Разбор условия case
+                conditions = self.parse_expression_list()
+                if not conditions:
+                    raise ParseError("Expected condition after 'case'")
+                nodes.append({"type": "CaseConditions", "value": conditions})
+
+                # Проверяем двоеточие
+                colon = self.current_token()
+                if colon and colon.kind == "colon":
+                    nodes.append({"Name": colon.kind, "Text": colon.text, "Pos": self.get_next_token_pos()})
+                    self.consume_token()
+                else:
+                    raise ParseError("Expected ':' after case condition")
+
+                # Разбор тела case
+                body = []
+                while self.current_token() and self.current_token().kind not in {"case", "default", "rbrace"}:
+                    stmt = self.parse_statement()
+                    if stmt:
+                        body.append(stmt)
+                    else:
+                        raise ParseError("Expected statement in case block")
+
+                cases.append({
+                    "type": "CaseClause",
+                    "conditions": conditions,
+                    "body": body
+                })
+
+            elif case_token and case_token.kind == "default":
+                if default_case is not None:
+                    raise ParseError("Multiple 'default' clauses are not allowed")
+                nodes.append({"Name": case_token.kind, "Text": case_token.text, "Pos": self.get_next_token_pos()})
+                self.consume_token()
+
+                # Проверяем двоеточие
+                colon = self.current_token()
+                if colon and colon.kind == "colon":
+                    nodes.append({"Name": colon.kind, "Text": colon.text, "Pos": self.get_next_token_pos()})
+                    self.consume_token()
+                else:
+                    raise ParseError("Expected ':' after default")
+
+                # Разбор тела default
+                body = []
+                while self.current_token() and self.current_token().kind not in {"case", "default", "rbrace"}:
+                    stmt = self.parse_statement()
+                    if stmt:
+                        body.append(stmt)
+                    else:
+                        raise ParseError("Expected statement in default block")
+
+                default_case = {
+                    "type": "DefaultClause",
+                    "body": body
+                }
+
+            else:
+                raise ParseError(f"Expected 'case' or 'default', got {case_token.text}")
+
+        # Закрывающая фигурная скобка
+        r_brace = self.current_token()
+        if r_brace and r_brace.kind == "rbrace":
+            nodes.append({"Name": r_brace.kind, "Text": r_brace.text, "Pos": self.get_next_token_pos()})
+            self.consume_token()
+        else:
+            raise ParseError("Expected '}' after switch cases")
+
+        return {
+            "type": "SwitchStatement",
+            "expression": expr,
+            "cases": cases,
+            "default": default_case,
+            "nodes": nodes
+        }
+
+
     def parse_statement(self) -> Optional[Dict[str, Any]]:
         token = self.current_token()
         if not token:
@@ -1089,11 +1230,13 @@ class Parser:
             return self.parse_for_statement()
         if token.kind == "if":
             return self.parse_if_statement()
+        if token.kind == "switch":
+            return self.parse_switch_statement()
         if token.kind == "continue":
             nodes = [{"Name": token.kind, "Text": token.text, "Pos": self.get_next_token_pos()}]
             self.consume_token()
             return {"type": "ContinueStatement", "nodes": nodes}
-        if token.kind == "break":  # Новая обработка break
+        if token.kind == "break":
             nodes = [{"Name": token.kind, "Text": token.text, "Pos": self.get_next_token_pos()}]
             self.consume_token()
             semicolon = self.current_token()
@@ -1101,21 +1244,20 @@ class Parser:
                 self.consume_token()
                 nodes.append({"Name": semicolon.kind, "Text": semicolon.text, "Pos": self.get_next_token_pos()})
             return {"type": "BreakStatement", "nodes": nodes}
-        if token.kind == "return":  # Новая обработка return
+        if token.kind == "return":
             nodes = [{"Name": token.kind, "Text": token.text, "Pos": self.get_next_token_pos()}]
             self.consume_token()
-            # Проверяем, есть ли выражение после return
+            expressions = []
             next_token = self.current_token()
-            expr = None
             if next_token and next_token.kind not in {"semicolon", "rbrace", "EOF"}:
-                expr = self.parse_expression()
-                nodes.append({"type": "Expression", "value": expr})
-            # Проверяем точку с запятой (опционально)
+                expressions = self.parse_expression_list()
+                for expr in expressions:
+                    nodes.append({"type": "Expression", "value": expr})
             semicolon = self.current_token()
             if semicolon and semicolon.kind == "semicolon":
                 self.consume_token()
                 nodes.append({"Name": semicolon.kind, "Text": semicolon.text, "Pos": self.get_next_token_pos()})
-            return {"type": "ReturnStatement", "expression": expr, "nodes": nodes}
+            return {"type": "ReturnStatement", "expressions": expressions, "nodes": nodes}
         if token.kind == "var" or (token.kind == "ident" and self.next_token() and self.next_token().kind in {"short_declaration", "comma"}):
             return self.parse_variable_declaration(consume_semicolon=True)
         expr = self.parse_expression()

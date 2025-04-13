@@ -9,9 +9,9 @@ func main(){
 
 	myStore := store.NewStore();
 	
-	myStore = myStore.AddProduct("Ноутбук", 1200.50, 10);
-	myStore = myStore.AddProduct("Мышь", 25.99, 50);
-	myStore = myStore.AddProduct("Клавиатура", 45.75, 30);
+	myStore = myStore.AddProduct("Ноутбук", 1200.50, 10)
+	myStore = myStore.AddProduct("Мышь", 25.99, 50)
+	myStore = myStore.AddProduct("Клавиатура", 45.75, 30)
 
 	fmt.Println("Список товаров:")
 	myStore.ListProducts()
